@@ -59,3 +59,12 @@ Contoh body `POST`, `PUT`, atau `PATCH`:
 ```
 
 SQLite tersimpan di `backend/db.sqlite3`. Admin Django tersedia di `/admin/` setelah membuat superuser dengan `python manage.py createsuperuser`.
+
+## Deployment ke Railway
+
+Buat dua service dari repository GitHub ini:
+
+1. **Backend**: gunakan Root Directory `/backend`, tambahkan PostgreSQL, lalu set `SECRET_KEY`, `DEBUG=False`, `ALLOWED_HOSTS=<domain-backend>.up.railway.app`, `CORS_ALLOWED_ORIGINS=https://<domain-frontend>.up.railway.app`, dan `OPENWEATHER_API_KEY`.
+2. **Frontend**: gunakan Root Directory `/frontend`, set `VITE_API_URL=https://<domain-backend>.up.railway.app/api`, lalu generate domain publik.
+
+Railway membaca `backend/Procfile`; migrasi berjalan otomatis saat deploy dan database memakai `DATABASE_URL` dari PostgreSQL.
