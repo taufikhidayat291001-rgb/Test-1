@@ -80,3 +80,4 @@ function ResourceForm({ title, eyebrow, onSubmit, children }) { return <form cla
 function DataTable({ headers, rows }) { return <div className="data-table-wrap"><table className="data-table"><thead><tr>{headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{rows.length ? rows.map((row, index) => <tr key={index}>{row.map((cell, cellIndex) => <td key={cellIndex}>{cell}</td>)}</tr>) : <tr><td className="empty" colSpan={headers.length}>Belum ada data.</td></tr>}</tbody></table></div> }
 
 export default App
+// Test comment for pull request
